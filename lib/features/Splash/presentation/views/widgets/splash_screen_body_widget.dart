@@ -59,7 +59,7 @@ class _SplashScreenBodyWidgetState extends State<SplashScreenBodyWidget>
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Image.asset(BooklyAssets.logoImagePath),
+        Image.asset(BooklyAssets.logoImage),
         const SizedBox(
           height: 4,
         ),

@@ -1,3 +1,3 @@
 class BooklyAssets{
-  static const logoImagePath = 'assets/images/Logo.png';
+  static const logoImage = 'assets/images/Logo.png';
 }
