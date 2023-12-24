@@ -1,3 +1,4 @@
+import 'package:bookly/core/utils/helper/assets_helper.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreenBodyWidget  extends StatelessWidget {
@@ -5,8 +6,12 @@ class SplashScreenBodyWidget  extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.red,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Image.asset(BooklyAssets.logoImagePath)
+      ],
     );
   }
 }
