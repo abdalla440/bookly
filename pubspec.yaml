@@ -18,6 +18,7 @@ dependencies:
   get: ^4.6.6
   font_awesome_flutter: ^10.6.0
   carousel_slider: ^4.2.1
+  google_fonts: ^6.1.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -28,7 +29,12 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+
   fonts:
     - family: Gugi
       fonts:
         - asset: assets/fonts/Gugi-Regular.ttf
+
+    - family: GT Sectra Fine Regular
+      fonts:
+        - asset: assets/fonts/GT Sectra Fine Regular.ttf

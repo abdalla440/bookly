@@ -30,10 +30,11 @@ class _SplashScreenBodyWidgetState extends State<SplashScreenBodyWidget>
     Future.delayed(
       const Duration(seconds: 2),
       () {
-        Get.to(
+        Get.off(()=>
           const HomePage(),
           duration: kTransitionDuration,
           transition: Transition.fade,
+
         );
       },
     );
