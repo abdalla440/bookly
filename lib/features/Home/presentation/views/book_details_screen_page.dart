@@ -11,13 +11,12 @@ class BookDetailsScreenPage extends StatelessWidget {
         actions:  [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: IconButton(onPressed: (){}, icon: const Icon(Icons.shopping_cart_outlined)),
+            child: IconButton(onPressed: (){
+
+            }, icon: const Icon(Icons.shopping_cart_outlined)),
           ),
         ],
-        leading:  Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
-          child: IconButton(onPressed: (){}, icon: const Icon(Icons.close_rounded)),
-        ),
+
         backgroundColor: Colors.transparent,
       ),
       body: const BookDetailsBodyWidget(),

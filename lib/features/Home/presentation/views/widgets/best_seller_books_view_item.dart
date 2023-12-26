@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../../contants.dart';
 import '../../../../../core/utils/helper/assets_helper.dart';
+import '../../../../../core/utils/helper/colors_helper.dart';
 import '../../../../../core/utils/helper/styles_helper.dart';
 import 'book_rating_widget.dart';
 
@@ -53,7 +54,7 @@ class BestSellerBooksViewItem extends StatelessWidget {
                   Text(
                     'J.K. Rowling',
                     style: BooklyStyles.textStyle14400.copyWith(
-                        fontWeight: FontWeight.w500, color: kGrayTextColor),
+                        fontWeight: FontWeight.w500, color: BooklyColors.kGrayTextColor,fontStyle: FontStyle.italic),
                   ),
                   const SizedBox(
                     height: 3,

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'books_image_item.dart';
 
-class FeaturedBooksListView extends StatelessWidget {
-  const FeaturedBooksListView({Key? key}) : super(key: key);
+
+class SuggestedBooksListView extends StatelessWidget {
+  const SuggestedBooksListView({Key? key}) : super(key: key);
 
   // @override
   // Widget build(BuildContext context) {
@@ -33,17 +34,16 @@ class FeaturedBooksListView extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 2),
       child: SizedBox(
-        height: MediaQuery.sizeOf(context).height * 0.3,
+        height: MediaQuery.sizeOf(context).height * 0.18,
         child: ListView.separated(
           itemBuilder: (context, index) => const BookImageItem(),
           scrollDirection: Axis.horizontal,
           itemCount: 20,
           separatorBuilder: (context, index) => const SizedBox(
-            width: 16,
+            width: 12,
           ),
         ),
       ),
     );
   }
 }
-

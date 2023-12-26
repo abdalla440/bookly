@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../../contants.dart';
+import '../../../../../core/utils/helper/colors_helper.dart';
 import '../../../../../core/utils/helper/styles_helper.dart';
 
 class BooksRatingWidget extends StatelessWidget {
@@ -26,7 +26,7 @@ class BooksRatingWidget extends StatelessWidget {
         Text(
           '(2390)',
           style: BooklyStyles.textStyle14400.copyWith(
-            color: kGrayTextColor,
+            color: BooklyColors.kGrayTextColor,
           ),
         ),
       ],

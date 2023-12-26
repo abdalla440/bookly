@@ -1,5 +1,7 @@
+import 'package:bookly/core/utils/helper/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/helper/assets_helper.dart';
 
@@ -17,7 +19,9 @@ class CustomNavigationBar extends StatelessWidget {
         children: [
           Image.asset(BooklyAssets.logoImage,height: 24,),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.kBookSearchScreenPage);
+            },
             icon: const Icon(
               FontAwesomeIcons.magnifyingGlass,
             ),

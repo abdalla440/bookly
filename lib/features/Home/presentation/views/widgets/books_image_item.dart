@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/helper/assets_helper.dart';
 
-class BooksListViewItem extends StatelessWidget {
-  const BooksListViewItem({Key? key}) : super(key: key);
+class BookImageItem extends StatelessWidget {
+  const BookImageItem({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
