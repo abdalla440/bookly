@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String fontsFontsFreeNetGilroyBold = 'assets/fonts/FontsFree-Net-Gilroy-Bold.ttf';
   static const String fontsGugiRegular = 'assets/fonts/Gugi-Regular.ttf';
   static const String imagesLogo = 'assets/images/Logo.png';
   static const String imagesTestImage = 'assets/images/test_image.png';

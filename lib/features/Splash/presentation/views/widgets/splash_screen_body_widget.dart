@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../../../../contants.dart';
+import '../../../../../core/utils/helper/app_router.dart';
 import '../../../../../core/utils/helper/assets_helper.dart';
-import '../../../../Home/presentation/views/home_screen_page.dart';
 import 'fade_animated_text.dart';
 
 class SplashScreenBodyWidget extends StatefulWidget {
@@ -30,12 +29,7 @@ class _SplashScreenBodyWidgetState extends State<SplashScreenBodyWidget>
     Future.delayed(
       const Duration(seconds: 2),
       () {
-        Get.off(()=>
-          const HomePage(),
-          duration: kTransitionDuration,
-          transition: Transition.fade,
-
-        );
+        GoRouter.of(context).replace(AppRouter.kHomeScreenPage);
       },
     );
   }

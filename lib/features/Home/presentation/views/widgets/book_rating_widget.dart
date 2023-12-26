@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../../../contants.dart';
 import '../../../../../core/utils/helper/styles_helper.dart';
 
@@ -11,6 +10,7 @@ class BooksRatingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Icon(
           Icons.star_rounded,
