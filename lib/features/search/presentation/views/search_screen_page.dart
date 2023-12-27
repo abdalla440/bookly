@@ -13,8 +13,9 @@ class SearchScreenPage extends StatelessWidget {
       appBar: AppBar(
         title: const TextField(
           style: BooklyStyles.textStyle18600,
-
-          decoration: InputDecoration.collapsed(hintText: 'Search ...',),
+          decoration: InputDecoration.collapsed(
+            hintText: 'Search ...',
+          ),
         ),
         backgroundColor: BooklyColors.kOrangeTextColor,
       ),

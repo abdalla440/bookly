@@ -1,5 +1,6 @@
-import 'package:bookly/features/Home/presentation/views/widgets/best_seller_list_view_widget.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../Home/presentation/views/widgets/best_seller_list_view_widget.dart';
 
 class SearchScreenBodyWidget extends StatelessWidget {
   const SearchScreenBodyWidget({Key? key}) : super(key: key);
@@ -9,6 +10,8 @@ class SearchScreenBodyWidget extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.only(
         top: 8.0,
+        left: 30.0,
+        right: 30.0,
       ),
       child: BestSellerBooksListView(
         scroll: AlwaysScrollableScrollPhysics(),

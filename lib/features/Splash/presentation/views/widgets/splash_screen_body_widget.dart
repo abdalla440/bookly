@@ -27,18 +27,30 @@ class _SplashScreenBodyWidgetState extends State<SplashScreenBodyWidget>
 
   void navigateToHome() {
     Future.delayed(
-      const Duration(seconds: 2),
+      const Duration(
+        seconds: 2,
+      ),
       () {
-        GoRouter.of(context).replace(AppRouter.kHomeScreenPage);
+        GoRouter.of(context).replace(
+          AppRouter.kHomeScreenPage,
+        );
       },
     );
   }
 
   void initStartFadingAnimation() {
-    animationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 2));
-    fadeAnimation =
-        Tween<double>(begin: 0.0, end: 1.0).animate(animationController);
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(
+        seconds: 2,
+      ),
+    );
+    fadeAnimation = Tween<double>(
+      begin: 0.0,
+      end: 1.0,
+    ).animate(
+      animationController,
+    );
     animationController.forward(); //start the animation
   }
 
@@ -54,11 +66,15 @@ class _SplashScreenBodyWidgetState extends State<SplashScreenBodyWidget>
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Image.asset(BooklyAssets.logoImage),
+        Image.asset(
+          BooklyAssets.logoImage,
+        ),
         const SizedBox(
           height: 4,
         ),
-        FadeAnimatedText(fadeAnimation: fadeAnimation),
+        FadeAnimatedText(
+          fadeAnimation: fadeAnimation,
+        ),
       ],
     );
   }
