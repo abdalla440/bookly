@@ -3,12 +3,14 @@ import 'package:flutter/widgets.dart';
 
 import '../../../../../core/utils/helper/colors_helper.dart';
 import '../../../../../core/utils/helper/styles_helper.dart';
+import '../../../data/models/book_model/book_model.dart';
 import 'book_details_price_preview_widget.dart';
-import 'book_rating_widget.dart';
 import 'books_image_item.dart';
 
 class BookDetailsSection extends StatelessWidget {
-  const BookDetailsSection({Key? key}) : super(key: key);
+  const BookDetailsSection({super.key, required this.bookModel});
+
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -20,20 +22,22 @@ class BookDetailsSection extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             horizontal: width * 0.23,
           ),
-          child: const BookImageItem(),
+          child: BookImageItem(
+              imagePath:
+              bookModel.volumeInfo.imageLinks.thumbnail),
         ),
         const SizedBox(
           height: 30.0,
         ),
-        const Text(
-          'The Jungle Book',
-          style: BooklyStyles.textStyle30400GT,
+         Text(
+          bookModel.volumeInfo.title,
+          style: BooklyStyles.textStyle30400GT,textAlign: TextAlign.center,
         ),
         const SizedBox(
           height: 10.0,
         ),
         Text(
-          'Rudyard Kipling',
+          bookModel.volumeInfo.authors[0],
           style: BooklyStyles.textStyle18600.copyWith(
             color: BooklyColors.kGrayTextColor,
           ),
@@ -41,7 +45,7 @@ class BookDetailsSection extends StatelessWidget {
         const SizedBox(
           height: 10.0,
         ),
-        const BooksRatingWidget(),
+        // const BooksRatingWidget(),
         const SizedBox(
           height: 20.0,
         ),

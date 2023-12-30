@@ -14,7 +14,7 @@ class HomeRepoImpl implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchBestSellerBooks() async {
     List<BookModel> booksList = [];
     String newestBooksEndPoint =
-        'volumes?filter=free-ebooks&Sorting=newest&q=subject: programming';
+        'volumes?Filtering=free-ebooks&Sorting=relevance&q=subject:Programming';
 
     try {
       // try to get the data from endpoint
@@ -36,8 +36,29 @@ class HomeRepoImpl implements HomeRepo {
   @override
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     List<BookModel> booksList = [];
-    String newestBooksEndPoint =
-        'volumes?filter=free-ebooks&q=subject: programming';
+    String newestBooksEndPoint = 'volumes?Filtering=free-ebooks&q=subject:art';
+
+    try {
+      // try to get the data from endpoint
+      var data = await dio.get(endPoint: newestBooksEndPoint);
+
+      // loop through the returned data and map the elements to [BookModel]
+      for (var book in data['items']) {
+        booksList.add(BookModel.fromJson(book));
+      }
+      return right(booksList);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      }
+      return left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks({required String bookCategory}) async{
+    List<BookModel> booksList = [];
+    String newestBooksEndPoint = 'volumes?Filtering=free-ebooks&Sorting=relevance &q=subject:$bookCategory';
 
     try {
       // try to get the data from endpoint

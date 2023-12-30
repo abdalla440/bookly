@@ -1,5 +1,10 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../core/widgets/error_placeholder_widget.dart';
+import '../../../../../core/widgets/loading_placeholder_widget.dart';
+import '../../controller/featured_cubit/featured_books_cubit.dart';
 import 'books_image_item.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
@@ -30,19 +35,35 @@ class FeaturedBooksListView extends StatelessWidget {
   //   );
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 2),
-      child: SizedBox(
-        height: MediaQuery.sizeOf(context).height * 0.3,
-        child: ListView.separated(
-          itemBuilder: (context, index) => const BookImageItem(),
-          scrollDirection: Axis.horizontal,
-          itemCount: 20,
-          separatorBuilder: (context, index) => const SizedBox(
-            width: 16,
-          ),
-        ),
-      ),
+    return BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
+      builder: (context, state) {
+        // case of success
+        if (state is FeaturedBooksSuccessState) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 2),
+            child: SizedBox(
+              height: MediaQuery.sizeOf(context).height * 0.3,
+              child: ListView.separated(
+                physics: BouncingScrollPhysics(),
+                itemBuilder: (context, index) =>  BookImageItem(imagePath: state.booksList[index].volumeInfo.imageLinks.thumbnail),
+                scrollDirection: Axis.horizontal,
+                itemCount: state.booksList.length,
+                separatorBuilder: (context, index) => const SizedBox(
+                  width: 16,
+                ),
+              ),
+            ),
+          );
+        }
+        // case of fail
+        else if (state is FeaturedBooksFailState) {
+          return ErrorPlaceholderWidget(state.errorMessage);
+        }
+        // case of loading (default)
+        else {
+          return const LoadingPlaceholderWidget();
+        }
+      },
     );
   }
 }

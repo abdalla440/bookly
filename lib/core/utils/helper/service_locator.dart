@@ -7,10 +7,11 @@ import 'api_helper.dart';
 final gitItServiceLocator = GetIt.instance; // create instance of GitIt
 
 void setupServiceLocator() {
+
+  // create ApiHelper Singleton object.
+  gitItServiceLocator.registerSingleton<ApiHelper>(ApiHelper(Dio()));
   // create HomeRepoImpl Singleton object.
   gitItServiceLocator.registerSingleton<HomeRepoImpl>(
       HomeRepoImpl(gitItServiceLocator.get<ApiHelper>()));
 
-  // create ApiHelper Singleton object.
-  gitItServiceLocator.registerSingleton<ApiHelper>(ApiHelper(Dio()));
 }

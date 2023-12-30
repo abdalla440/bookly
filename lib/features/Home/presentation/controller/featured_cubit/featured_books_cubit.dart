@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../data/models/book_model/book_model.dart';
 import '../../../data/repos/home_repo.dart';
 
-
 part 'featured_books_state.dart';
 
 class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
@@ -17,7 +16,7 @@ class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
 
     results.fold((failure) {
       emit(FeaturedBooksFailState(failure.errorMessage));
-      }, (success) {
+    }, (success) {
       emit(FeaturedBooksSuccessState(success));
     });
   }
